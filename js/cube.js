@@ -28,5 +28,14 @@ function start() {
     // Placeholder for further cube rendering
 }
 
+const canvas = document.getElementById("glcanvas");
+const gl = initWebGL(canvas);
+
+if (gl) {
+    console.log("WebGL initialized successfully!");
+} else {
+    console.log("WebGL initialization failed.");
+}
+
 //call start on load
 window.onload = start;
