@@ -12,3 +12,21 @@ function initWebGL(canvas) {
     return gl;
 }
 
+//setting up the webgl context and clear color:
+function start() {
+    const canvas = document.getElementById("glcanvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const gl = initWebGL(canvas);
+    if (!gl) return;
+
+    //clear to black:
+    gl.clearColor(0.0,0.0,0.0,1.0); 
+    gl.clear(gl.COLOR_BUFFER_bit);
+
+    // Placeholder for further cube rendering
+}
+
+//call start on load
+window.onload = start;
