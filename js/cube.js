@@ -10,7 +10,7 @@
  const I = 150 * e; //Ionization energy (150 eV converted to joules)
  const c = 3.0e8; //speed of light in m/s
  const pi = Math.PI; //pi constant
- 
+
 function initWebGL(canvas) {
     //this gl object will allow us to interact with the webgl api
     //and draw on the canvas
@@ -21,6 +21,14 @@ function initWebGL(canvas) {
 
     }
     return gl;
+}
+
+function computeEnergyLoss(v) {
+    const prefactor = (4* pi * Math.pow(e, 4) * Math.pow(z, 2) * Z * n) / (m0 * Math.pow(v, 2));
+    const log_term1 = Math.log((2 * m0 * Math.pow(v, 2)) / I);
+    const log_term2 = Math.log(1 - (Math.pow(v, 2) / Math.pow(c, 2))) + Math.pow(v, 2) / Math.pow(c, 2);
+
+    return prefactor * (log_term1 - log_term2);
 }
 
 //setting up the webgl context and clear color:
