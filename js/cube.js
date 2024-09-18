@@ -1,5 +1,16 @@
 //main js file for webGL code
 //initializing webgl:
+
+ //constants:
+ const e = 1.602e-19; //elementary charge in C
+ const z = 2; //charge of alpha particle
+ const Z = 13; //Atomic number of aluminium
+ const n = 6.02e28; //Number density of aluminium atoms
+ const m0 = 9.109e-31; //Electron rest mass in kg
+ const I = 150 * e; //Ionization energy (150 eV converted to joules)
+ const c = 3.0e8; //speed of light in m/s
+ const pi = Math.PI; //pi constant
+ 
 function initWebGL(canvas) {
     //this gl object will allow us to interact with the webgl api
     //and draw on the canvas
@@ -21,15 +32,7 @@ function start() {
     const gl = initWebGL(canvas);
     if (!gl) return;
 
-    //constants:
-    const e = 1.602e-19; //elementary charge in C
-    const z = 2; //charge of alpha particle
-    const Z = 13; //Atomic number of aluminium
-    const n = 6.02e28; //Number density of aluminium atoms
-    const m0 = 9.109e-31; //Electron rest mass in kg
-    const I = 150 * e; //Ionization energy (150 eV converted to joules)
-    const c = 3.0e8; //speed of light in m/s
-    const pi = Math.PI; //pi constant
+   
 
 
     //clear to black:
