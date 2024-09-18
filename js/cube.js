@@ -47,6 +47,8 @@ function start() {
     gl.clearColor(0.0,0.0,0.0,1.0); 
     gl.clear(gl.COLOR_BUFFER_BIT);
 
+    console.log(computeEnergyLoss(1e7)); //Test the function inside the start
+    console.log(computeEnergyLoss(2e8)); //Test with another velocity
     console.log("WebGL initialized successfully!");
 
 
